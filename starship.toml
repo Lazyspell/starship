@@ -7,6 +7,7 @@ format = """
 $fill$golang\
 $docker_context\
 $jobs\
+$typescript\
 $python\
 $lua$python$battery$cmd_duration[ ─╮](white)
 [╰─](white)$character """
@@ -53,9 +54,9 @@ format = "via [🎁 $version](208 bold) "
 
 # Golang settings
 [golang]
-style = 'blue'
-symbol = " "
-format = "[$symbol($version )]($style)"
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+detect_files = ["go.mod"]
 
 # Java settings
 [java]
@@ -69,6 +70,19 @@ symbol = " "
 style = "yellow bold"
 python_binary = "python3"
 pyenv_version_name = true
+
+# TypeScript settings
+[nodejs]
+symbol = ""
+style = "blue bold"
+format = '[ $symbol ($version) ]($style)'
+
+[typescript]
+symbol = "󰛦 "
+style = "blue bold"
+format = '[ $symbol($version) ]($style)'
+detect_extensions = ["ts", "tsx"]
+detect_files = ["tsconfig.json", "tsconfig.base.json"]
 
 # git settings
 [git_branch]
